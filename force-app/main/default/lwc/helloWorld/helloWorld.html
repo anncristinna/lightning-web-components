@@ -1,0 +1,59 @@
+<template>
+    <lightning-card  title="Cadastro" icon-name="custom:custom14">
+        <div class="slds-s-around-medium">
+
+            <template if:true={sexo}>
+                <template if:true={sexoSelecionado}>
+                    <lightning-avatar src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"></lightning-avatar>
+                </template>
+                <template if:false={sexoSelecionado}>
+                    <lightning-avatar src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg"></lightning-avatar>
+                </template>
+                <lightning-helptext content="Apareceu seu avatar de acordo com o sexo escolhido"></lightning-helptext>
+            </template>
+            
+            <p>Nome: {nome}</p>
+            <p>Idade: {idade}</p>
+            <p>{serie} Série</p>
+
+            <lightning-input type="text" label="Nome" value={greeting} onchange={changeHandler}></lightning-input>
+
+            <lightning-input type="number" label="Idade" value={idade} onchange={changeHandlerIdade}></lightning-input>
+
+            <lightning-input type="checkbox" label="É estudante?" checked={estudante} onchange={changeHandlerEstudante}></lightning-input>
+
+            <template if:true={estudante}>
+                <lightning-combobox 
+                    name="Serie"
+                    label="Qual a sua série?"
+                    value={serie}
+                    placeholder="Selecione sua série"
+                    options={optionsSeries}
+                    onchange={handleComboBox}>
+                </lightning-combobox>
+            </template>
+
+            <br>
+
+            <lightning-radio-group
+                name="sexo"
+                label="Qual seu sexo"
+                options={optionsSexo}
+                value={sexo}
+                type="radio"
+                onchange={handleRadioGroup}>
+
+            </lightning-radio-group>
+
+            <br>
+
+            <lightning-map map-markers={mapMarkers}></lightning-map>
+
+            <lightning-button-group>
+                <lightning-button variant="brand" label="Salvar" title="Salvar" onclick={handleClickSalvar} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="success" label="Limpar Campos" title="Clear Fields" onclick={handleClickLimparCampos} class="slds-m-left_x-small"></lightning-button>
+            </lightning-button-group>
+
+        </div>
+    </lightning-card>
+</template>
