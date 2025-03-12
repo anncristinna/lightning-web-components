@@ -11,12 +11,35 @@
                 </template>
                 <lightning-helptext content="Apareceu seu avatar de acordo com o sexo escolhido"></lightning-helptext>
             </template>
-            
-            <p>Nome: {nome}</p>
-            <p>Idade: {idade}</p>
-            <p>{serie} Série</p>
 
-            <lightning-input type="text" label="Nome" value={greeting} onchange={changeHandler}></lightning-input>
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small" size="6">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p>Nome: {nome}</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small" size="2">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p>Idade: {idade}</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="shrink" padding="around-small" size="2">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p>{serie} Série</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto no-grow" padding="around-small" size="2">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p>É estudante: {estudante}</p>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+            
+           
+            
+
+            <lightning-input type="text" label="Nome" value={nome} onchange={changeHandler}></lightning-input>
 
             <lightning-input type="number" label="Idade" value={idade} onchange={changeHandlerIdade}></lightning-input>
 
@@ -47,7 +70,11 @@
 
             <br>
 
-            <lightning-map map-markers={mapMarkers}></lightning-map>
+            <lightning-input type="text" label="Digite seu país" value={country} onchange={changeHandlerCountry} placeholder="Digite seu país"></lightning-input>
+            <lightning-button variant="success" label="Buscar" title="Buscar" onclick={handleClickCountry} class="slds-m-left_x-small"></lightning-button>
+
+            <br>
+            <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel}></lightning-map>
 
             <lightning-button-group>
                 <lightning-button variant="brand" label="Salvar" title="Salvar" onclick={handleClickSalvar} class="slds-m-left_x-small"></lightning-button>

@@ -1,28 +1,18 @@
 import { LightningElement } from 'lwc';
 
 export default class HelloWorld extends LightningElement {
-    greeting = '';
     nome = '';
     idade = '';
     serie = null;
     estudante = false;
     sexo = '';
+    country = '';
     sexoSelecionado = '';
-    mapMarkers = [
-        {
-            location: {
-                City: 'Rio de Janeiro',
-                Country: 'Brasil'
-            }
-        }
-    ];
+    mapMarkers = [];
+    zoomLevel = 2; 
 
     changeHandler(event) {
-        this.greeting = event.target.value;
-    }
-
-    handleClickSalvar() {
-        this.nome = this.greeting;
+        this.nome = event.target.value;
     }
 
     changeHandlerIdade(event) {
@@ -66,5 +56,20 @@ export default class HelloWorld extends LightningElement {
         this.sexo = event.target.value;
         if(this.sexo == "feminino") this.sexoSelecionado = true;
         else this.sexoSelecionado = false;
+    }
+
+    changeHandlerCountry(event) {
+        this.country = event.target.value;
+    }
+
+    handleClickCountry() {
+        if(this.country) {
+            this.zoomLevel = 4;
+            this.mapMarkers = [{
+                location: {
+                    Country: this.country
+                }
+            }]
+        }
     }
 }
