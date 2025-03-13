@@ -12,16 +12,13 @@ export default class HelloWorld extends LightningElement {
     zoomLevel = 2; 
 
     changeHandler(event) {
-        this.nome = event.target.value;
+        this[event.target.name] = event.target.value;
     }
 
-    changeHandlerIdade(event) {
-        this.idade = event.target.value;
-    }
 
-    changeHandlerEstudante(event) {
-        this.estudante = event.target.checked;
-        if(this.estudante === false) this.serie = '';
+    changeHandlerChecked(event) {
+        this[event.target.name] = event.target.checked;
+        if(!this.estudante && event.target.name == 'estudante') this.serie = '';
     }
 
     handleClickLimparCampos(event) {
@@ -58,9 +55,6 @@ export default class HelloWorld extends LightningElement {
         else this.sexoSelecionado = false;
     }
 
-    changeHandlerCountry(event) {
-        this.country = event.target.value;
-    }
 
     handleClickCountry() {
         if(this.country) {

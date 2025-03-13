@@ -39,11 +39,11 @@
            
             
 
-            <lightning-input type="text" label="Nome" value={nome} onchange={changeHandler}></lightning-input>
+            <lightning-input type="text" label="Nome" value={nome} onchange={changeHandler} name="nome"></lightning-input>
 
-            <lightning-input type="number" label="Idade" value={idade} onchange={changeHandlerIdade}></lightning-input>
+            <lightning-input type="number" label="Idade" value={idade} onchange={changeHandler} name="idade"></lightning-input>
 
-            <lightning-input type="checkbox" label="É estudante?" checked={estudante} onchange={changeHandlerEstudante}></lightning-input>
+            <lightning-input type="checkbox" label="É estudante?" checked={estudante} onchange={changeHandlerChecked} name="estudante"></lightning-input>
 
             <template if:true={estudante}>
                 <lightning-combobox 
@@ -70,7 +70,7 @@
 
             <br>
 
-            <lightning-input type="text" label="Digite seu país" value={country} onchange={changeHandlerCountry} placeholder="Digite seu país"></lightning-input>
+            <lightning-input type="text" label="Digite seu país" value={country} onchange={changeHandler} placeholder="Digite seu país" name="country"></lightning-input>
             <lightning-button variant="success" label="Buscar" title="Buscar" onclick={handleClickCountry} class="slds-m-left_x-small"></lightning-button>
 
             <br>

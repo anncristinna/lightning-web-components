@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Contato">
+        <div class="slds-m-around-medium">
+            <p>{recordId}</p>
+            <br>
+            <lightning-record-edit-form
+                 object-api-name="Contact"
+                  onsuccess={handlerContact} 
+                  record-id={recordId} >
+
+                <lightning-input-field field-name="Name"> </lightning-input-field>
+                <lightning-input-field field-name="Phone"> </lightning-input-field>
+                <lightning-input-field field-name="AccountId"> </lightning-input-field>
+
+                <div class="slds-var-m-top_medium">
+                    <lightning-button
+                         variant="brand"
+                        type="submit" 
+                        label="Criar Contato">
+                    </lightning-button>
+
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>
