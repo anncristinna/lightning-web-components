@@ -4,11 +4,27 @@
             <lightning-input 
                 type="text" 
                 label="Nome" 
-                value={nome} 
+                value={conta.name} 
                 onchange={changeHandler} 
-                name="nome" 
+                name="name" 
                 placeholder="Digite seu nome">
             </lightning-input>
+            <lightning-input 
+                type="text" 
+                label="Telefone" 
+                value={conta.phone} 
+                onchange={changeHandler} 
+                name="phone" 
+                placeholder="Digite seu telefone">
+           </lightning-input>
+           <lightning-input 
+                type="number" 
+                label="Número de funcionários" 
+                value={conta.numberOfEmployees} 
+                onchange={changeHandler} 
+                name="numberOfEmployees" 
+                placeholder="Digite o número de funcionários">
+          </lightning-input>
             <br>
             <lightning-button 
                 variant="success" 
