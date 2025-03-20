@@ -9,10 +9,31 @@
                     placeholder="Selecione sua série"
                     options={optionsSerie}
                     onchange={handleChange}>
-
                 </lightning-combobox>
-                {serie}
             </template>
+                <template if:true={serieEscolhida}>
+
+                    <lightning-accordion class="example-accordion" active-section-name="B" allow-multiple-sections-open>
+
+                        <template if:true={a}>
+                            <lightning-accordion-section name="serie1" label="Accordion Série 1">
+                                <p>Foi escolhido a série {serie}</p>
+                            </lightning-accordion-section>
+                        </template>
+
+                        <template if:true={b}>
+                            <lightning-accordion-section name="serie2" label="Accordion Série 2">
+                                <p>Foi escolhido a série {serie}</p>
+                            </lightning-accordion-section>
+                        </template>
+
+                        <template if:true={c}>
+                            <lightning-accordion-section name="serie3" label="Accordion Série 3">
+                                <p>Foi escolhido a série {serie}</p>
+                            </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion>
+                </template>
         </div>
     </lightning-card>
 </template>

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card icon-name="custom:custom13">
+        <div class="slds-m-around-medium">
+            <lightning-button onclick={handleClick} label="Abrir modal" aria-haspopup="dialog"></lightning-button>
+            <p>Resultado: {resultado}</p>
+            <lightning-button label="Mostar aviso" onclick={showToastAviso}></lightning-button>
+            <lightning-button label="Mostar erro" onclick={showToastErro}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
