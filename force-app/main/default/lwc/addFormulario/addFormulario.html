@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Adicionando Formulário" icon-name="custom:custom12">
+        <div class="slds-m-around_medium">
+            <template for:each={formularios} for:item="item" for:index="index">
+                <div key={item.id} style="border: solid 1px rgba(197, 175, 175); padding: 3px 3px 10px; margin-top:10px">
+                    <lightning-input  type="text" label="Nome" value={item.Name} onchange={handleChange} data-index={index} name="Name"> </lightning-input>
+                    <lightning-input  type="number" label="Idade" value={item.Idade} onchange={handleChange} data-index={index} name="Idade"> </lightning-input>
+                    <lightning-button icon-name="utility:delete" title="Delete" onclick={handleClickDelete} data-index={index}></lightning-button>
+                </div>
+            </template> 
+            <lightning-button variant="brand" label="Add formulário" onclick={addFormulario}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
