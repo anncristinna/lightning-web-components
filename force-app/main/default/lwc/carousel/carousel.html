@@ -1,3 +1,37 @@
 <template>
-    
+  <div class="slds-size_3-of-4" style="background-color: aliceblue;">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-aroun_x-small">
+        <h1 style="font-size: 20px;"><strong>Basic Carousel</strong> </h1>
+        <div class="carousel">
+            <div class="slider" style={posicao}>
+                <template for:each={dados} for:item="dado">
+                    <div key={dado.id} class="slide">
+                        <h2><strong>{dado.empresa}</strong></h2>
+                        <template for:each={dado.produtos} for:item="produto">
+                            <div key={produto.id}>
+                                <h2><strong>{produto.nome}</strong></h2>
+                            </div>
+                        </template>
+                        <template for:each={dado.distribuidoras} for:item="distribuidora">
+                            <div key={distribuidora.id}>
+                                <h2><strong>{distribuidora.nome}</strong></h2>
+                            </div>
+                        </template>
+                        <template for:each={dado.lojas} for:item="loja">
+                            <div key={loja.id}>
+                                <h2><strong>{loja.nome}</strong></h2>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="buttons">
+            <lightning-button-group>
+                <lightning-button onclick={previousSlide} label="<--" disabled={botaoRetorno}></lightning-button>
+                <lightning-button onclick={nextSlide} label="-->" disabled={botaoAvancar}></lightning-button>
+            </lightning-button-group>
+        </div>
+    </div>
+  </div>
 </template>

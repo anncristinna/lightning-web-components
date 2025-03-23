@@ -1,0 +1,17 @@
+.carousel {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+}
+
+.slide {
+    background-color: rgba(11, 141, 69, 0.759);
+    flex: 0 0 100%;
+    color: #fff;
+}
