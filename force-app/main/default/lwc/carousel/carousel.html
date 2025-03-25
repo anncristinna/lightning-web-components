@@ -5,7 +5,7 @@
         <div class="carousel">
             <div class="slider" style={posicao}>
                 <template for:each={dados} for:item="dado">
-                    <div key={dado.id} class="slide">
+                    <div key={dado.id} class={slideJs}>
                         <h2><strong>{dado.empresa}</strong></h2>
                         <template for:each={dado.produtos} for:item="produto">
                             <div key={produto.id}>
@@ -29,6 +29,7 @@
         <div class="buttons">
             <lightning-button-group>
                 <lightning-button onclick={previousSlide} label="<--" disabled={botaoRetorno}></lightning-button>
+                <lightning-button onclick={handleSelecionar} label="Selecionar" variant="success"></lightning-button>
                 <lightning-button onclick={nextSlide} label="-->" disabled={botaoAvancar}></lightning-button>
             </lightning-button-group>
         </div>

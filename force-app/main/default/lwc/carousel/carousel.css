@@ -8,10 +8,16 @@
 
 .slider {
     display: flex;
+    transition: transform .3s;
 }
 
 .slide {
     background-color: rgba(11, 141, 69, 0.759);
     flex: 0 0 100%;
     color: #fff;
+}
+
+.slideSelecionado {
+    flex: 0 0 100%;
+    background-color: rgba(11, 141, 70, 0.353);
 }
