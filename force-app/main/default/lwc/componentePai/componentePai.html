@@ -2,9 +2,11 @@
     <lightning-card>
         <h1 style="font-size: 25px; text-align:center;">Componente Pai</h1>
         <br>
-        <c-carousel 
+        <template if:true={dadosPai}>
+            <c-carousel 
             dados={dadosPai}
             onpassavalor={handleSelecionarPai}>
         </c-carousel>
+        </template>
     </lightning-card>
 </template>
