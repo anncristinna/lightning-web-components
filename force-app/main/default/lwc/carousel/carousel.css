@@ -18,6 +18,5 @@
 }
 
 .slideSelecionado {
-    flex: 0 0 100%;
     background-color: rgba(11, 141, 70, 0.353);
 }

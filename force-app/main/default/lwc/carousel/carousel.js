@@ -5,6 +5,10 @@ export default class Carousel extends LightningElement {
     pagina = 0;
     paginaSelecionada;
 
+    connectedCallback() {
+      this.dados = JSON.parse(JSON.stringify(this.dados));
+    }
+
       get botaoRetorno () {
         return this.pagina === 0;
       }
@@ -33,6 +37,21 @@ export default class Carousel extends LightningElement {
         if(this.pagina < this.dados.length - 1) {
             this.pagina++;
         } 
+      }
+
+      handleSelecionar() {
+        this.paginaSelecionada = this.pagina;
+        const selecionado = new CustomEvent('passavalor', {
+            detail: {
+              dado: this.dados[this.pagina]
+            }
+        });
+        this.dispatchEvent(selecionado)
+      }
+
+      mudarvalor(event) {
+        this.dados[this.pagina].empresa = event.target.value;
+        this.dados = [...this.dados]
       }
       
 }

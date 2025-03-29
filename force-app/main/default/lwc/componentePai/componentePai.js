@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 
 export default class ComponentePai extends LightningElement {
 
-    dados = [
+    dadosPai = [
         {
           id: 1,
           empresa: "Tech Solutions",
@@ -50,8 +50,7 @@ export default class ComponentePai extends LightningElement {
         }
       ];
 
-      handleSelecionarPai() {
-        this.paginaSelecionada = this.pagina;
-        console.log(JSON.stringify(this.dados[this.pagina]))
+       handleSelecionarPai(event) {
+        console.log(JSON.stringify(event.detail.dado))
       }
 }
